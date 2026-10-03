@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: datespets-mascotas-java
+    runtime: docker
+    plan: free
+    dockerfilePath: ./docker/mascotas.Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+
+  - type: web
+    name: datespets-citas-java
+    runtime: docker
+    plan: free
+    dockerfilePath: ./docker/citas.Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+
+  - type: web
+    name: datespets-ia-java
+    runtime: docker
+    plan: free
+    dockerfilePath: ./docker/ia.Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.5-flash
+      - key: MASCOTAS_SERVICE_URL
+        sync: false
+      - key: CITAS_SERVICE_URL
+        sync: false

@@ -1,0 +1,36 @@
+[
+  {
+    "type": "function",
+    "name": "buscar_mascota",
+    "description": "Busca mascotas registradas en DatesPets por nombre. Devuelve información real del paciente como id, nombre, especie, raza, edad y propietario. Debe utilizarse cuando el usuario pregunte si una mascota está registrada, quién es su dueño o información básica de una mascota.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "description": "Nombre de la mascota que se desea buscar."
+        }
+      },
+      "required": [
+        "nombre"
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "name": "obtener_citas_mascota",
+    "description": "Obtiene las citas veterinarias registradas para una mascota utilizando su ID. Debe utilizarse cuando el usuario pregunte por las citas, fechas, motivos o estados de las citas de una mascota.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "mascota_id": {
+          "type": "integer",
+          "description": "ID de la mascota."
+        }
+      },
+      "required": [
+        "mascota_id"
+      ]
+    }
+  }
+]
